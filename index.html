@@ -1,10 +1,22 @@
-?php 
+<?php 
 
-$conexion=mysqli_connect("localhost","root","","vera_e1");
+try {
+	session_start();
+error_reporting(0);
+include 'conexion.php';
+$conexion=mysqli_connect("vera_e1");
+$varsesion = $_SESSION['correo'];
+$idempleado = $_SESSION['cedula_cli'];
 
+if($varsesion == null || $varsesion == ''){
+}else{
+header("location: inicio.html");
+}
+
+} catch (Exception $e) {
+	header("location: inicio.html");
+}
  ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
