@@ -1,24 +1,21 @@
 <?php 
-
-try {
-	session_start();
-error_reporting(0);
-include 'conexion.php';
-$conexion=mysqli_connect("vera_e1");
-$varsesion = $_SESSION['correo'];
-$idempleado = $_SESSION['cedula_cli'];
-
-if($varsesion == null || $varsesion == ''){
-}else{
-header("location: inicio.html");
+session_start();
+include('index.php');
+$loginError = '';
+if (!empty($_POST['correo']) && !empty($_POST['contrase'])) {
+	include 'Invoice.php';
+	$invoice = new Invoice();
+	$user = $invoice->loginUsers($_POST['correo'], $_POST['contrase']); 
+	if(!empty($user)) {
+                $_SESSION['cedula'] = $user[0]['cedula_cli'];
+		$_SESSION['correo'] = $user[0]['correo'];		
+		header("Location:create_invoice.php");
+	} else {
+		$loginError = "Email y contraseña son incorrectos!";
+	}
 }
+?>
 
-} catch (Exception $e) {
-	header("location: inicio.html");
-}
- ?>
-<!DOCTYPE html>
-<html lang="en">
 <head>
 	<title>Login V5</title>
 	<meta charset="UTF-8">
@@ -46,6 +43,21 @@ header("location: inicio.html");
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
+</head>
+<div class="row">	
+  <div class="col-xs-6">
+  
+<div class="heading">
+		
+	</div>
+<div class="login-form">
+<form action="" method="post">
+    <h2 class="text-center">Iniciar Sesión</h2>  
+<div class="form-group">
+<?php if ($loginError ) { ?>
+<div class="alert alert-warning"><?php echo $loginError; ?></div>
+<?php } ?>
+</div> 
 <body>
 	
 	<div class="limiter">
@@ -96,6 +108,9 @@ header("location: inicio.html");
 						</button>
 						
 					</div>
+					<div class="clearfix">
+ <p><a href="registrar.php">Registrarse</a></p>
+</div>  
 
 					<div class="w-full text-center p-t-55">
 						<span class="txt2">
