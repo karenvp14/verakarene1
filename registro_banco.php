@@ -16,7 +16,7 @@ $conexion=mysqli_connect("localhost","root","","vera_e1");
 </head>
 <body>
 
-	<h5 style="color:#110ACD"> <a href="Actividad7-2P.html"> Volver</a></h5>
+	<h5 style="color:#110ACD"> <a href="index.php"> Volver</a></h5>
 	
 	<h1 style="text-align: center;">REGISTRO DE BANCO</h1>
 

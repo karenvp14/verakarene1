@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,9 @@
 <body>
 	<h1>SISTEMA BANCARIO</h1><br>
 
-	<a href="login.php">Iniciar sesion </a><br><br><br>
-	
+	<a href="registro_cuenta.php">Registrar Cuenta</a><br><br><br>
+	<a href="registro_banco.php">Registrar Banco</a><br><br><br>
+	<a href="registro_cliente.php">Registrar Cliente</a>
+
 </body>
 </html>
