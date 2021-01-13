@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sistema Bancario</title>
+<script src="js/invoice.js"></script>
+<link href="css/style.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0
+">
+</head>
 <?php 
 session_start();
 include('header.php');
@@ -17,15 +27,6 @@ if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
     }
 }
 ?>
-
-<head>
-<title>Sistema facturación</title>
-<script src="js/invoice.js"></script>
-<link href="css/style.css" rel="stylesheet">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0
-">
-</head>
 <div class="row">   
   <div class="col-xs-6">
   
@@ -72,7 +73,7 @@ if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
     <button type="submit" name="login" class="btn btn-primary" style="width: 100%;"> Acceder </button>
 </div>
 <div class="clearfix">
- <p><a href="login.php">Registrarse</a></p>
+ <p><a href="login.html">Registrarse</a></p>
 </div>        
 </form>
 </div>   
@@ -81,4 +82,7 @@ if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
 <div class="col-xs-6">-</div>   
 </div>      
 </div>
+
 <?php include('footer.php');?>
+
+</html>
