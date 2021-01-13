@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: profesor.html");
+                            header("location: inicio.html");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "La contraseña que has ingresado no es válida.";
